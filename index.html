@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill Her Up</title>
+
+    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css">
+
+    <script>
+        var fillHerUp = {};
+    </script>
+
+    <style>
+        .comboBox {
+            height: 30px;
+        }
+        .th {
+            font-weight: bold;
+        }
+        .tLeft {
+            text-align: left;
+        }
+
+        .tRight {
+            text-align: right;
+        }
+
+        .fillListDiv {
+            background-color: azure;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: auto;
+        }
+        .fillTable {
+            width: 90%;
+        }
+        .fRow:nth-of-type(odd) {
+            background: #e0e0e0;
+        }
+
+    </style>
+
+    <script src="init.js"></script>
+    <script src="fillinglist.js"></script>
+
+</head>
+<body>
+
+<div class="mdc-elevation--z8" style="height: 140px; width: 80%; margin: auto; padding: 12px; background-color: white">
+
+    <h3 class="mdc-typography--headline">Select Car</h3>
+
+    <select class="mdc-elevation--z8 mdc-typography--subheading2 comboBox" id="carDropDown"
+            onchange="ChangeCarDropDown (this.value)" style="width: 200px;">
+        <option></option>
+    </select>
+</div>
+
+<div id="fillDiv" class="mdc-elevation--z8"
+     style="width: 80%;margin-top: 15px; margin-left: auto; margin-right: auto; padding: 12px; background-color: white">
+    <h3 class="mdc-typography--headline">Fillings</h3>
+
+    <div class="mdc-typography--body1 fillListDiv" id="fillListDiv">
+
+    </div>
+
+</div>
+
+<script>
+
+    function ChangeCarDropDown(value) {
+
+        if (value != '') {
+
+            ShowFillingDiv(true);
+            GetFillings(value);
+        }
+        else {
+            ShowFillingDiv(false);
+        }
+    };
+
+    ShowFillingDiv(false);
+
+</script>
+
+</body>
+</html>
